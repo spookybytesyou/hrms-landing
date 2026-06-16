@@ -60,7 +60,13 @@ const Hero = (props: Props) => {
   };
 
   return (
-    <section className={cn("overflow-hidden py-32", className)}>
+    <section className={cn("relative overflow-hidden py-32", className)}>
+      <div className="absolute inset-0 -z-10">
+        <LaserFlow
+          horizontalBeamOffset={0.06}
+          verticalBeamOffset={0.025}
+        />
+      </div>
       <div className="container mx-auto">
         <div className="flex flex-col gap-5">
           <div className="relative isolate flex flex-col gap-5">
