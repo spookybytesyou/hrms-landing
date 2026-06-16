@@ -1,3 +1,6 @@
+"use client"
+
+import { useRef } from "react";
 import { ArrowRight, Wifi } from "lucide-react";
 import { LaserFlow } from "./LaserFlow";
 import { Button } from "@/components/ui/button";
@@ -59,12 +62,54 @@ const Hero = (props: Props) => {
     ...props,
   };
 
+  const revealImgRef = useRef<HTMLImageElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const el = revealImgRef.current;
+    if (el) {
+      el.style.setProperty('--mx', `${x}px`);
+      el.style.setProperty('--my', `${y}px`);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const el = revealImgRef.current;
+    if (el) {
+      el.style.setProperty('--mx', '-9999px');
+      el.style.setProperty('--my', '-9999px');
+    }
+  };
+
   return (
-    <section className={cn("relative overflow-hidden py-32", className)}>
-      <div className="absolute inset-0 -z-10">
+    <section
+      className={cn("relative overflow-hidden py-32", className)}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="absolute inset-0 -z-10 bg-[#050508] overflow-hidden">
         <LaserFlow
           horizontalBeamOffset={0.06}
           verticalBeamOffset={0.025}
+          color="#6398f5"
+        />
+        <img
+          ref={revealImgRef}
+          src="/hrms-hero.png"
+          alt="Reveal effect background"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          style={{
+            mixBlendMode: "lighten",
+            opacity: 0.1,
+            "--mx": "-9999px",
+            "--my": "-9999px",
+            WebkitMaskImage: "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 80px, rgba(255,255,255,0.6) 180px, rgba(255,255,255,0.25) 280px, rgba(255,255,255,0) 360px)",
+            maskImage: "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 80px, rgba(255,255,255,0.6) 180px, rgba(255,255,255,0.25) 280px, rgba(255,255,255,0) 360px)",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+          } as React.CSSProperties}
         />
       </div>
       <div className="container mx-auto">
