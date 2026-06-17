@@ -147,7 +147,7 @@ const Navbar = ({
       <div className="container mx-auto px-4">
         {/* Desktop Menu */}
         <nav className="hidden items-center justify-between lg:flex">
-          <div className="flex items-center gap-12">
+          <div className="flex items-center gap-24">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
               <img
