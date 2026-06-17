@@ -121,6 +121,7 @@ const Hero = (props: Props) => {
             } as React.CSSProperties}
           />
         </div>
+        <div className="absolute inset-x-0 bottom-28 md:bottom-36 h-32 bg-gradient-to-t from-[#050508] to-transparent pointer-events-none" />
       </div>
       <div className="container mx-auto">
         <div className="flex flex-col gap-5">
