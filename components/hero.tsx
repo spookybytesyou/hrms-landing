@@ -91,7 +91,7 @@ const Hero = (props: Props) => {
 
   return (
     <section
-      className={cn("relative overflow-hidden pt-52 md:pt-56 pb-32", className)}
+      className={cn("relative overflow-hidden pt-52 md:pt-48 pb-32", className)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -127,7 +127,7 @@ const Hero = (props: Props) => {
             <p className="mx-auto md:mx-0 max-w-5xl text-center md:text-left text-lg text-balance text-foreground md:text-xl">
               {description}
             </p>
-            <div className="flex flex-col items-center md:items-start gap-3 pt-3 pb-20">
+            <div className="flex flex-col items-center md:items-start gap-3 pt-3 pb-28">
               {buttons?.primary && (
                 <Button size="lg" asChild className="w-full sm:w-auto">
                   <a href={buttons.primary.url}>
