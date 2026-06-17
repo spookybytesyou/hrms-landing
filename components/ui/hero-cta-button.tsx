@@ -33,7 +33,7 @@ const GradientButton = ({ children }: PropsWithChildren) => {
       ref={buttonRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="transition-all duration-200 uppercase font-bold flex items-center justify-center h-10 px-16 text-xs text-black -tracking-[0.015em] relative z-10 overflow-hidden rounded-full border border-white/60 bg-[#d1d1d1] space-x-1 sm:pl-[59px] sm:pr-[52px]"
+      className="cursor-pointer transition-all duration-200 uppercase font-bold flex items-center justify-center h-10 px-16 text-xs text-black -tracking-[0.015em] relative z-10 overflow-hidden rounded-full border border-white/60 bg-[#d1d1d1] space-x-1 sm:pl-[59px] sm:pr-[52px]"
     >
       <motion.div
         className="absolute -z-10 flex w-[204px] items-center justify-center pointer-events-none"
