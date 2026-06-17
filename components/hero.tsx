@@ -48,11 +48,11 @@ const defaultProps: Hero115Props = {
   buttons: {
     primary: {
       text: "Take a Tour",
-      url: "https://shadcnblocks.com",
+      url: "https://www.arcenza.com",
     },
     secondary: {
       text: "View GitHub",
-      url: "https://shadcnblocks.com",
+      url: "https://www.arcenza.com",
     },
   },
   image: {
