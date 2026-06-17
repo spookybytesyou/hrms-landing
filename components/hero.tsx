@@ -121,6 +121,7 @@ const Hero = (props: Props) => {
               maskRepeat: "no-repeat",
             } as React.CSSProperties}
           />
+          <RealisticFogBackground />
         </div>
       </div>
       <div className="container mx-auto">
