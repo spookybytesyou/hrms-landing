@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { ArrowRight, Wifi } from "lucide-react";
 import { LaserFlow } from "./LaserFlow";
+import { RealisticFogBackground } from "./realistic-fog-background";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -111,6 +112,7 @@ const Hero = (props: Props) => {
             maskRepeat: "no-repeat",
           } as React.CSSProperties}
         />
+        <RealisticFogBackground />
       </div>
       <div className="container mx-auto">
         <div className="flex flex-col gap-5">
